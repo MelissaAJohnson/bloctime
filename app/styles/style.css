@@ -9,12 +9,10 @@ nav {
 }
 
 .time h1 {
-  font-family: 'Righteous', cursive;
+  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
   font-weight: 100;
-  color: #fff;
+  color: #000000;
   font-size: 6em ;
   text-align: center;
-  text-shadow: 1px 1px 0px rgba(142, 36, 36, 0.84);
-  padding-top: 1em;
   margin-bottom: .25em;
 }

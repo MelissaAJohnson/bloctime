@@ -1,7 +1,7 @@
 <div class = 'container'>
 
-  <section class="hero-content">
-    <div class="current-time"><h1>{{ home.timer.counter | timecode }}</h1></div>
+  <section>
+    <div class="time"><h1>{{ home.timer.counter | timecode }}</h1></div>
     <div ng-show="!home.timer.isTimeRunning">
       <button ng-click="home.timer.startSession()" class='btn btn-primary'>Let's Get Working</button>
       <div ng-show="home.timer.timeStarted" ng-click="home.timer.reset()">Reset Timer</div>
