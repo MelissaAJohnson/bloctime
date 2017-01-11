@@ -1,18 +1,27 @@
 <!DOCTYPE html>
-<html ng-app="blocTime">
+<html ng-app="bloctime">
 <head lang="en">
     <meta charset="UTF-8">
-    <title>Bloc Base Project</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bloc Time</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="/styles/style.css">
 </head>
 <body>
+  <nav class="navbar navbar-default">
+    <h1>blocTime</h1>
+  </nav>
+  <div class='container'>
+    <ui-view></ui-view>
+  </div>
+
   <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.min.js"></script>
-  <script src="/scripts/app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/3.6.4/firebase.js"></script>
   <script>
-    // Initialize Firebase
+  // Initialize Firebase
     var config = {
       apiKey: "AIzaSyCSRqkPOF0Nu1ilVN3yuB-vin4FZWDeK0g",
       authDomain: "bloctime-81fdd.firebaseapp.com",
@@ -22,5 +31,10 @@
     };
     firebase.initializeApp(config);
   </script>
+  <script src="https://cdn.firebase.com/libs/angularfire/1.2.0/angularfire.min.js"></script>
+  <script src="/scripts/app.js"></script>
+  <script src="/scripts/controllers/HomeCtrl.js"></script>
+  <script src="/scripts/services/Timer.js"></script>
+  <script src="/scripts/filters/timecode.js"></script>
 </body>
 </html>
