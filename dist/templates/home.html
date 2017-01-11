@@ -3,11 +3,12 @@
   <section>
     <div class="time"><h1>{{ home.timer.counter | timecode }}</h1></div>
     <div ng-show="!home.timer.isTimeRunning">
-      <button ng-click="home.timer.startSession()" class='btn btn-primary'>Let's Get Working</button>
-      <div ng-show="home.timer.timeStarted" ng-click="home.timer.reset()">Reset Timer</div>
+      <button ng-click="home.timer.startSession()" class='btn btn-primary'>{{ home.timer.buttonText }}</button>
+      <br /><br />
+      <a ng-show="home.timer.timeStarted" ng-click="home.timer.reset()">Reset Timer</a>
     </div>
     <div ng-show="home.timer.isTimeRunning">
-      <button ng-click="home.timer.stop()" class='btn btn-danger'>Take a Break</button>
+      <button ng-click="home.timer.stop()" class='btn btn-danger'>{{ home.timer.buttonText }}</button>
     </div>
   </section>
 

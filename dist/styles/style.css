@@ -16,3 +16,7 @@ nav {
   text-align: center;
   margin-bottom: .25em;
 }
+
+a {
+  cursor: pointer;
+}
