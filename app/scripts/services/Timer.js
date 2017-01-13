@@ -2,8 +2,8 @@
   function Timer($interval) {
     var Timer = {};
     var stop;
-    var SESSION_LENGTH = 10;
-    var BREAK_LENGTH = 5;
+    var SESSION_LENGTH = 1500;
+    var BREAK_LENGTH = 300;
 
     Timer.buttonText = "Let's Get Started";
     Timer.counter = SESSION_LENGTH;
@@ -30,11 +30,7 @@
     Timer.stop = function () {
       $interval.cancel(stop);
       Timer.isTimeRunning = false;
-      if (Timer.onBreak) {
-        Timer.buttonText = "Take Break";
-      } else {
-        Timer.buttonText = "Resume";
-      }
+      Timer.buttonText = "Resume";
     }
 
     Timer.reset = function () {
@@ -47,6 +43,7 @@
     Timer.takeBreak = function () {
       Timer.onBreak = true;
       Timer.isTimeRunning = true;
+      Timer.buttonText = "Pause"
       stop = $interval(function() {
         Timer.counter--;
 
