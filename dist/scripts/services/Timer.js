@@ -4,6 +4,8 @@
     var stop;
     var SESSION_LENGTH = 1500;
     var BREAK_LENGTH = 300;
+    var LONG_BREAK_LENGTH = 1800;
+    var completedWorkSessions = 0;
 
     Timer.buttonText = "Let's Get Started";
     Timer.counter = SESSION_LENGTH;
@@ -11,6 +13,7 @@
 
     Timer.startSession = function () {
       Timer.isTimeRunning = true;
+      //  timeStarted tells us whether to display the reset option when the timer is stopped
       this.timeStarted = true;
       Timer.onBreak = false;
       Timer.buttonText = "Pause";
@@ -22,7 +25,13 @@
           Timer.isTimeRunning = false;
           Timer.onBreak = true;
           Timer.buttonText = "Take a Break";
-          Timer.counter = BREAK_LENGTH;
+          completedWorkSessions++;
+          if (completedWorkSessions == 4) {
+            Timer.counter = LONG_BREAK_LENGTH;
+            completedWorkSessions = 0;
+          } else {
+            Timer.counter = BREAK_LENGTH;
+          };
         }
       }, 1000);
     }
