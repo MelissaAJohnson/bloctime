@@ -1,11 +1,15 @@
 (function() {
-  function Timer($interval) {
+  function Timer($interval, $scope) {
     var Timer = {};
     var stop;
     var SESSION_LENGTH = 1500;
     var BREAK_LENGTH = 300;
     var LONG_BREAK_LENGTH = 1800;
     var completedWorkSessions = 0;
+
+    var dingSound = new buzz.sound("/assets/sounds/ding.mp3", {
+      preload: true
+    });
 
     Timer.buttonText = "Let's Get Started";
     Timer.counter = SESSION_LENGTH;
@@ -22,6 +26,7 @@
 
         if(Timer.counter == 0) {
           $interval.cancel(stop)
+          dingSound.play();
           Timer.isTimeRunning = false;
           Timer.onBreak = true;
           Timer.buttonText = "Take a Break";
@@ -58,6 +63,7 @@
 
         if(Timer.counter == 0) {
           $interval.cancel(stop);
+          dingSound.play();
           Timer.isTimeRunning = false;
           Timer.onBreak = false;
           Timer.buttonText = "Start Session";
