@@ -1,10 +1,9 @@
 (function() {
    function TasksCtrl(Tasks, $scope) {
-     this.tasks = Tasks.all;
+     $scope.allTasks = Tasks.all;
 
-     //$scope.tasks = vm.tasks;
-     $scope.addTask = function(newTask) {
-       this.tasks.$add(newTask);
+     $scope.addTask = function() {
+       $scope.allTasks.$add($scope.newTask);
      }
    }
 

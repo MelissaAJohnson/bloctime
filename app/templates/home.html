@@ -1,16 +1,22 @@
-<div class = 'container'>
-  <section ng-controller="TasksCtrl as tasksCtrl">
-    <h3>Task History</h3>
-    <input type="text" name="task" value="add task name" ng-model="tasksCtrl.newTask" >
-    <button class="btn btn-default" type="button" ng-click="addTask(tasksCtrl.newTask)" name="button">Add task</button>
-    <br />
-    <div class="task-list" ng-repeat="task in tasksCtrl.tasks">
-      {{ task.$value }}
-    </div>
+
+
+  <section ng-controller="TasksCtrl as tasksCtrl" class="col-sm-4 tasks">
+      <h3>Task History</h3>
+      <form ng-submit="addTask()">
+        <input type="text" ng-model="newTask" class="form-control">
+        <br />
+        <input type="submit" class = "btn btn-default">
+      </form>
+      <br />
+      <div class="tasks-list">
+        <li ng-repeat="task in allTasks">
+          {{ task.$value }}
+        </li>
+      </div>
+      <br />
   </section>
 
-
-  <section>
+  <section ng-controller="HomeCtrl as HomeCtrl">
     <div class="time"><h1>{{ home.timer.counter | timecode }}</h1></div>
     <div ng-show="!home.timer.isTimeRunning">
       <div ng-show="!home.timer.onBreak">
@@ -26,4 +32,3 @@
       <button ng-click="home.timer.stop()" class='btn btn-primary'>{{ home.timer.buttonText }}</button>
     </div>
   </section>
-</div>
