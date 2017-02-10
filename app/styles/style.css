@@ -20,3 +20,13 @@ nav {
 a {
   cursor: pointer;
 }
+
+.tasks {
+  border-style: solid;
+  border-color: grey;
+  border-radius: 5px;
+}
+
+.tasks-list {
+  text-align: left;
+}

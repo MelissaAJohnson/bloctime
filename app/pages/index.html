@@ -10,10 +10,10 @@
     <script src="https://www.gstatic.com/firebasejs/3.6.4/firebase.js"></script>
 </head>
 <body>
-  <nav class="navbar navbar-default">
-    <h1>blocTime</h1>
-  </nav>
   <div class='container'>
+    <nav class="navbar navbar-default">
+      <h1>blocTime</h1>
+    </nav>
     <ui-view></ui-view>
   </div>
 
@@ -21,6 +21,8 @@
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/buzz/1.1.0/buzz.min.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/3.6.8/firebase.js"></script>
+
   <script>
   // Initialize Firebase
     var config = {
@@ -32,10 +34,12 @@
     };
     firebase.initializeApp(config);
   </script>
-  <script src="https://cdn.firebase.com/libs/angularfire/1.2.0/angularfire.min.js"></script>
+  <script src="https://cdn.firebase.com/libs/angularfire/2.3.0/angularfire.min.js"></script>
   <script src="/scripts/app.js"></script>
   <script src="/scripts/controllers/HomeCtrl.js"></script>
+  <script src="/scripts/controllers/TasksCtrl.js"></script>
   <script src="/scripts/services/Timer.js"></script>
+  <script src="/scripts/services/Tasks.js"></script>
   <script src="/scripts/filters/timecode.js"></script>
 </body>
 </html>
