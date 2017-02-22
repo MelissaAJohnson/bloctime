@@ -9,7 +9,7 @@
       </form>
       <br />
       <div class="tasks-list">
-        <li ng-repeat="task in allTasks">
+        <li ng-repeat="task in allTasks | orderBy: 'id' : true">
           {{ task.$value }}
         </li>
       </div>
